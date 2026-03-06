@@ -11,6 +11,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.30.3",
   "dependencies": {
+    "@card-platform/shared": "workspace:*",
     "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-router": "^1.166.2",
     "react": "^19.2.4",

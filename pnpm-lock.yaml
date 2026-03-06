@@ -42,6 +42,9 @@ importers:
       '@card-platform/database':
         specifier: workspace:*
         version: link:../database
+      '@card-platform/shared':
+        specifier: workspace:*
+        version: link:../shared
       express:
         specifier: ^5.2.1
         version: 5.2.1
@@ -74,6 +77,9 @@ importers:
 
   packages/frontend:
     dependencies:
+      '@card-platform/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@tanstack/react-query':
         specifier: ^5.90.21
         version: 5.90.21(react@19.2.4)
@@ -96,6 +102,8 @@ importers:
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@25.3.3)(jiti@2.6.1)(yaml@2.8.2)
+
+  packages/shared: {}
 
 packages:
 
