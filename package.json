@@ -1,32 +1,17 @@
 {
   "name": "card-program-platform",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.30.3",
-  "dependencies": {
-    "@apollo/server": "^5.4.0",
-    "@aws-sdk/client-eventbridge": "^3.1002.0",
-    "@aws-sdk/client-sqs": "^3.1002.0",
-    "@prisma/client": "^7.4.2",
-    "express": "^5.2.1",
-    "graphql": "^16.13.1"
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "dev": "pnpm run dev:backend & pnpm run dev:frontend"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.3.3",
     "nodemon": "^3.1.14",
-    "prisma": "^7.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
   }
 }

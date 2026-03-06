@@ -1,0 +1,19 @@
+{
+  "name": "@card-platform/database",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:studio": "prisma studio"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "prisma": "^7.4.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.4.2"
+  }
+}
