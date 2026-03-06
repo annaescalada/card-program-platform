@@ -2,11 +2,14 @@
   "name": "card-program-platform",
   "private": true,
   "scripts": {
-    "dev:backend": "pnpm --filter backend dev",
-    "dev:frontend": "pnpm --filter frontend dev",
-    "dev": "pnpm run dev:backend & pnpm run dev:frontend"
+    "dev:backend": "pnpm --filter @card-platform/backend dev",
+    "dev:frontend": "pnpm --filter @card-platform/frontend dev",
+    "dev": "pnpm run dev:backend & pnpm run dev:frontend",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^6.1.3",
+    "@graphql-codegen/typescript": "^5.0.9",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
