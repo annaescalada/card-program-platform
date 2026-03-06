@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Card {
+  id         String      @id @default(uuid())
+  cardNumber String      @unique
+  status     String
+  balance    Float
+  createdAt  DateTime    @default(now())
+  events     CardEvent[]
+}
+
+model CardEvent {
+  id        String   @id @default(uuid())
+  cardId    String
+  card      Card     @relation(fields: [cardId], references: [id])
+  type      String // CARD_ISSUED, CARD_BLOCKED...
+  payload   Json?
+  createdAt DateTime @default(now())
+}
