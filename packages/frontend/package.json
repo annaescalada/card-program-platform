@@ -1,15 +1,12 @@
 {
   "name": "@card-platform/frontend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.30.3",
   "dependencies": {
     "@card-platform/shared": "workspace:*",
     "@tanstack/react-query": "^5.90.21",
@@ -20,6 +17,7 @@
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.x.x",
     "vite": "^7.3.1"
   }
 }
