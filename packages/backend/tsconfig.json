@@ -2,8 +2,12 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "declaration": true,
+    "lib": ["ES2020"],
+    "types": ["node", "express"],
+    "typeRoots": ["./node_modules/@types", "../../node_modules/@types"]
   },
-  "include": ["src/**/*", "../database/prisma.client.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

@@ -6,7 +6,7 @@ const config: CodegenConfig = {
     './packages/shared/src/graphql/types.ts': {
       plugins: ['typescript', 'typescript-resolvers'],
       config: {
-        enumsAsTypes: true,  // ← genera union types en vez de enums
+        enumsAsTypes: true,
       },
     },
   },
