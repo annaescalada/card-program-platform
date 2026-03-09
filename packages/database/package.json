@@ -1,22 +1,19 @@
 {
   "name": "@card-platform/database",
   "version": "1.0.0",
-  "main": "index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio"
   },
-  "devDependencies": {
-    "@types/pg": "^8.18.0",
-    "prisma": "^7.4.2"
-  },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.2",
     "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.4.2"
   }
 }

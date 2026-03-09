@@ -2,7 +2,7 @@
   "name": "@card-platform/backend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
   },

@@ -1,10 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": ".",
-    "declaration": true
-  },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "dist", "generated", "prisma"]
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"]
 }
