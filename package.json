@@ -6,7 +6,8 @@
     "dev:frontend": "pnpm --filter @card-platform/frontend dev",
     "dev": "pnpm run dev:backend & pnpm run dev:frontend",
     "codegen": "graphql-codegen --config codegen.ts",
-    "build:shared": "pnpm --filter @card-platform/shared build"
+    "build:shared": "pnpm --filter @card-platform/shared build",
+    "build:database": "pnpm --filter @card-platform/database build"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^6.1.3",
