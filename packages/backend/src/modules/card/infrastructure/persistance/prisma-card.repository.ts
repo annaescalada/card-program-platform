@@ -1,6 +1,6 @@
 import { prisma } from '@card-platform/database'
 import { ICardRepository } from '../../application/ports/outbound/card.repository.port'
-import { Card, CardStatus } from '../../domain/card.entity'
+import { Card } from '../../domain/card.entity'
 
 export class PrismaCardRepository implements ICardRepository {
 
@@ -43,7 +43,7 @@ export class PrismaCardRepository implements ICardRepository {
     return Card.fromPersistence({
       id: record.id,
       cardNumber: record.cardNumber,
-      status: record.status as CardStatus,
+      status: record.status,
       balance: record.balance,
       createdAt: record.createdAt,
     })

@@ -6,7 +6,7 @@ import { BlockCardUseCase } from '../modules/card/application/use-case/block-car
 import { GetCardUseCase } from '../modules/card/application/use-case/get-card.use-case'
 import { GetCardsUseCase } from '../modules/card/application/use-case/get-cards.use-case'
 import { cardResolvers } from '../modules/card/infrastructure/graphql/resolvers/card.resolver'
-import { cardTypeDefs } from '../modules/card/infrastructure/graphql/schema'
+import { cardTypeDefs } from '../modules/card/infrastructure/graphql/schema/card.schema'
 import { PrismaCardRepository } from '../modules/card/infrastructure/persistance/prisma-card.repository'
 
 export async function createServer() {

@@ -1,4 +1,6 @@
-export type CardStatus = 'ACTIVE' | 'BLOCKED' | 'EXPIRED'
+export const cardStatus = ['ACTIVE', 'BLOCKED', 'EXPIRED'] as const
+
+export type CardStatus = typeof cardStatus[number]
 
 export interface IssueCardInput {
     cardNumber: string
@@ -33,6 +35,23 @@ export class Card {
             status: 'ACTIVE',
             balance: input.initialBalance,
             createdAt: new Date(),
+        })
+    }
+
+    static fromPersistence(props: {
+        id: string
+        cardNumber: string
+        status: string
+        balance: number
+        createdAt: Date
+    }): Card {
+        if (!cardStatus.includes(props.status as CardStatus)) {
+            throw new Error(`Invalid card status: ${props.status}`)
+        }
+
+        return new Card({
+            ...props,
+            status: props.status as CardStatus,
         })
     }
 
