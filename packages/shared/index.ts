@@ -1,1 +1,1 @@
-export * from './src/graphql/types'
+export * from './src/graphql/types.js'

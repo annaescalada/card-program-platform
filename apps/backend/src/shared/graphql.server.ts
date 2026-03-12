@@ -8,12 +8,14 @@ import { GetCardsUseCase } from '../modules/card/application/use-case/get-cards.
 import { cardResolvers } from '../modules/card/infrastructure/graphql/resolvers/card.resolver'
 import { cardTypeDefs } from '../modules/card/infrastructure/graphql/schema/card.schema'
 import { PrismaCardRepository } from '../modules/card/infrastructure/persistance/prisma-card.repository'
+import { StubEventPublisher } from '../modules/card/infrastructure/messaging/stub-event-publisher'
 
 export async function createServer() {
   const cardRepository = new PrismaCardRepository()
+  const eventPublisher = new StubEventPublisher()
 
-  const issueCard = new IssueCardUseCase(cardRepository, null as any)
-  const blockCard = new BlockCardUseCase(cardRepository, null as any)
+  const issueCard = new IssueCardUseCase(cardRepository, eventPublisher)
+  const blockCard = new BlockCardUseCase(cardRepository, eventPublisher)
   const getCard = new GetCardUseCase(cardRepository)
   const getCards = new GetCardsUseCase(cardRepository)
 
