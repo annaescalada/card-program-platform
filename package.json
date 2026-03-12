@@ -2,7 +2,7 @@
   "name": "card-program-platform",
   "private": true,
   "scripts": {
-    "dev": "pnpm --parallel --filter @card-platform/* dev",
+    "dev": "pnpm --parallel --filter @card-platform/backend --filter @card-platform/frontend dev",
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "devDependencies": {

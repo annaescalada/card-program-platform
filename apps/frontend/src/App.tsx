@@ -1,22 +1,31 @@
 import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
-import type { RootState } from './store'
-import { decrement, increment, incrementByAmount } from './store/counter/counterSlice'
+import { useQuery } from '@apollo/client/react'
+import type { Card } from '@card-platform/shared'
+import CardForm from './components/CardForm'
+import CardBox from './components/CardBox'
+import { GET_CARDS } from './graphql/queries'
+
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
+  const { data: cardsData, error, loading } = useQuery<{ cards: Card[] }>(GET_CARDS)
+
   return (
-    <div>
-      <h2>Count: {count}</h2>
-      <div>
-        <button onClick={() => dispatch(increment())}>Increment</button>
-        <button onClick={() => dispatch(decrement())}>Decrement</button>
-        <button onClick={() => dispatch(incrementByAmount(5))}>
-          Increment by 5
-        </button>
-      </div>
-    </div>
+    <>
+      <h1>Card Program Platform</h1>
+      {
+        error
+          ? <>
+            <p>Error: {error.message}</p>
+          </>
+          : loading
+            ? <p>Loading...</p>
+            : <>
+              <CardForm />
+              <h2>Available cards:</h2>
+              {cardsData?.cards.map((card: Card) => <CardBox key={card.id} card={card} />)}
+            </>
+      }
+    </>
   )
 }
 
