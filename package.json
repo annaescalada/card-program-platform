@@ -10,5 +10,8 @@
     "@graphql-codegen/typescript-resolvers": "^5.1.7",
     "tsx": "^4.7.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
   }
 }
